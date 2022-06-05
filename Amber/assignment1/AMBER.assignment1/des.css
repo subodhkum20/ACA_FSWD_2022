@@ -1,0 +1,50 @@
+body{
+    background-color: #DFDFDE;
+    margin: 0px;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    color: #2eafec;
+}
+.aba{
+    background-color: #;
+    padding:10px;
+    position: relative;
+    padding-top: 80px;
+}
+.top-container{
+    background-color: #15133C;
+    padding:10px;
+    position: relative;
+    padding-top: 80px;
+}
+
+.bba{
+    position: left;
+    margin-top: 40px;
+}
+
+
+.phone{
+    height: 70px;
+    width: 70px;
+    border-radius: 70%;
+    margin:30px;
+}
+.Education{
+    height: 50px;
+    width: 70px;
+    border-radius: 70%;
+    margin:30px;
+}
+.app-icons{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin:20px;
+}
+.Interests{
+    height: 50px;
+    width: 70px;
+    border-radius: 70%;
+    margin:30px;
+}
