@@ -1,0 +1,22 @@
+h2{
+    color: red;
+}
+a{
+    color: yellow;
+}
+li{
+    list-style: square;
+}
+a:hover{
+    color: red;
+    text-decoration: solid;
+}
+div.relative {
+    position: relative;
+    left: 1250px;
+    
+  }
+  body{
+      background-color: beige;
+  }
+  
