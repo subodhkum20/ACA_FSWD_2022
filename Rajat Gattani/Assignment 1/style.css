@@ -1,0 +1,86 @@
+body{
+    background-color: #EBFFFA;
+    margin: 0px;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    color: #2eafec;
+}
+.top-container{
+    background-color: #c5f1f9;
+    padding:10px;
+    position: relative;
+    padding-top: 80px;
+}
+.middle-container{
+    padding-top: 100px;
+    padding-top: 50px;
+}
+.bottom-cloud{
+    position: absolute;
+    margin-top: 40px;
+}
+.top-cloud{
+    position: relative;
+    left: 230px;
+}
+hr{
+    border: dotted #98a9a9 6px;
+    border-bottom: none;
+    width: 4%;
+    margin:70px auto;
+}
+h1{
+    margin: 50px auto 0px auto;
+    font-family: 'Sacramento', cursive;
+    font-size: 5.625rem;
+    line-height: 1;
+}
+h2{
+    font-size: 2rem;
+    font-weight: normal;
+    padding-bottom: 20px;
+    font-weight: bolder;
+}
+h3{
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+.interests-h3{
+    margin: 50px auto 20px 250px;
+}
+.Education{
+    height: 150px;
+    width: 150px;
+    float:left;
+    margin-right: 80px;
+    margin-left: 200px;
+    margin-bottom: auto;
+}
+.Interests{
+    height: 200px;
+    width: 200px;
+    float: right;
+    margin-left: 80px;
+    margin-right: 200px;
+}
+.contact-image{
+    height: 100px;
+    width: 100px;
+    margin:auto;
+}
+.app-icons{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin:20px;
+}
+.skill-row{
+    text-align: left;
+    margin:auto;
+}
+p{
+    color: #272e2e;
+    width: 60%;
+    margin: 10px auto 10px auto;
+    line-height: 2;
+}
