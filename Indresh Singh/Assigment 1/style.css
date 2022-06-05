@@ -1,0 +1,100 @@
+*{
+
+    
+    box-sizing: border-box;
+    background-image: url("https://images.unsplash.com/photo-1653383729787-ce82b562ebbd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#intro
+{
+    display:flex;
+    flex-wrap: wrap;
+    
+}
+
+
+#name
+{
+   font-size: 45px;
+   background-size: 0px;
+   color:rgb(113, 96, 244);
+   position: relative;
+   left:385px;
+   
+}
+#dev
+{
+   
+    font-size:25px;
+    background-size: 0px;
+    color:green;
+    position: relative;
+    top:0px;
+    left:75px;
+    top:80px;
+
+}
+
+#avatar
+{
+   
+ width:300px;
+  float:left;
+  background-size: 0px;
+}
+
+#about
+{
+ 
+ color:deeppink;
+ font-size: 30px;
+ background-size: 0px;
+ position: relative;
+ 
+ 
+}
+
+#profile
+{
+    color:rgb(255, 0, 0);
+    font-size:25px;
+    position: absolute;
+    top:650px;
+    display: flex;
+}
+
+#code
+{
+    color:yellow;
+    position:absolute;
+    top: 30px;
+    display: flex;
+    
+}
+#contact
+{
+    color: rgb(116, 237, 100);
+    font-size: 30px;
+    position:absolute;
+    top:600px;
+    display: flex;
+}
+#interest
+{
+    color:aqua;
+    font-size: 30px;
+}
+
+#quote
+{
+display: flex;    
+height: 300px;
+width: 700px;
+position: absolute;
+left:800px;
+
+
+}
+
