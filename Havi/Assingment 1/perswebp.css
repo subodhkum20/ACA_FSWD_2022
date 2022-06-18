@@ -1,0 +1,14 @@
+header{ padding: 10px;background-color: rgb(24, 24, 80);text-align: center;color: white;font-size: x-large;}
+nav{padding : 10px;background-color: rgba(0, 0, 0, 0.562); color: white;font-size: larger;}
+main{background-image:url(back2.png);
+  background-repeat: no-repeat;
+  background-size:cover;
+  padding: 20px;
+/* color: rgb(162, 162, 250); */
+color: white;
+font-size: large;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+padding-left: 10px;}
+alpha{text-align: right; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+alpha img{padding-left: 990px;}
+main footer{text-align: right; color:white;}

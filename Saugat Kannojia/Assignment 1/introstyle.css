@@ -1,0 +1,89 @@
+h1 {
+    color: darkblue;
+    background-color: aquamarine;
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-family: fantasy;
+    width: 800px;
+    border-color: gold;
+    border-width: 5px;
+    border-style: solid;
+    border-left-width: 8px;
+    border-left-style: groove;
+    border-radius: 20px;
+    text-align: center;
+    border-right-width: 8px;
+    border-right-style: groove;
+}
+
+h2 {
+    color: darkblue;
+    background-color: azure;
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 2px;
+    width: 400px;
+    border-color: gold;
+    border-width: 5px;
+    border-style: solid;
+    border-left-width: 8px;
+    border-left-style: groove;
+    border-radius: 20px;
+
+}
+
+div {
+    background-color: aquamarine;
+    width: 400px;
+    border-color: brown;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+h2::first-letter {
+    color: darkgreen;
+    text-align: center;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+p {
+    line-height: 2;
+    font-weight: 200;
+}
+
+button {
+    color: darkblue;
+    background-color: lightblue;
+}
+
+button:hover {
+    background-color: lightgoldenrodyellow;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: wavy;
+}
+
+.first {
+    color: blueviolet;
+}
+
+#hello {
+    color: red;
+}
+
+input[type="text"] {
+    background-color: blanchedalmond;
+    width: 250px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+input[type="password"] {
+    background-color: blanchedalmond;
+    width: 250px;
+    border-radius: 20px;
+    text-align: center;
+}
