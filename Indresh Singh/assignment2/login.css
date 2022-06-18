@@ -1,0 +1,73 @@
+*{
+  
+    background-color: black;
+    color: white;
+
+}
+
+#signup
+{
+  position: absolute;
+  top:200px;
+  left: 40%;
+  
+}
+#LastN
+{
+    padding: 12px;
+    margin: 10px;
+}
+#Username
+{
+    padding: 12px;
+    margin: 10px;
+}
+#Password
+{
+    padding: 12px;
+    margin: 10px;
+}
+#FirstN
+{
+    padding: 12px;
+    margin: 10px;
+}
+#signbutton
+{
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    background: #1a7e21;
+    width: 200px;
+    height: 40px;
+    border-radius: 9px;
+    position: absolute;
+    left: 20%;
+}
+
+
+#Signuptext
+{
+   position: absolute;
+   top:125px;
+   left: 45%;
+   padding: 12px;
+   margin: 10px;
+   
+}
+ 
+#already
+{
+ position: absolute;
+ top:500px;
+ left:44%;
+
+}
+
+#alreadyL
+{
+ position: absolute;
+ top:400px;
+ left:44%;
+
+}
