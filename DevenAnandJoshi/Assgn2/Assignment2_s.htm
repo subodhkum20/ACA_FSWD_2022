@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <title>Signup</title>
+    
+       
+    
+</head>
+<body>
+    <div id="main">
+        <h1 id="heading">Signup</h1>
+        <form action='https://yournoteserver.herokuapp.com/users' method="post">
+            <label for="fname">First Name: </label>
+            <input type="text" id="fname"><p></p>
+            <label for="lname">Last Name: </label>
+            <input type="text" id="lname"><p></p>
+            <label for="uname">Username: </label>
+            <input type="text" id="uname"><p></p>
+            <label for="ps">Password: </label>
+            <input type="password" id="ps"><p></p>
+        </form>
+        <button id="submit">Submit</button>
+        
+    </div>
+    <script>
+        document.querySelector('#submit').addEventListener('click', ()=>{
+
+            fetch("https://yournoteserver.herokuapp.com/users", {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/x-www-form-urlencoded',
+                'Access-Control-Request-Method': 'POST',
+                'Access-Control-Request-Headers': 'origin',
+                'Origin': 'https://yournoteserver.herokuapp.com/',
+            },
+            body: {
+                username: document.getElementById('uname').value,
+                password: document.getElementById('ps').value,
+                firstName: document.getElementById('fname').value,
+                lastName: document.getElementById('lname').value
+
+            },
+            })
+            .then((res)=>{
+                console.log(res)
+                if(res.status===401){
+                    res.setHeader('Content-Type', 'application/json');
+                    res.send({err:'try a different username'});
+
+                }
+                else if (res.status===500){
+                    res.setHeader('Content-Type', 'application/json');
+                    res.send({err:"username and password required"});
+
+                }else if(res.status===200){
+                    res.setHeader('Content-Type', 'application/json');
+                    res.send(user);
+
+                }
+            })
+            
+            });
+    
+    </script>
+</body>
+</html>
