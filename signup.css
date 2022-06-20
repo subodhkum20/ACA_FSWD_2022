@@ -1,0 +1,21 @@
+*{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.596);
+ color: whitesmoke; 
+ }
+ 
+ .alpha{ 
+
+    position: relative;
+    top: 0;
+    opacity: 1;
+    float: left;
+    padding: 50px 500px 40px 510px;
+    width: 25%;
+    /* background: #fff; */
+
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    z-index: 5;}
+    
