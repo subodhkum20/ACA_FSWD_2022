@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylefsdw.css">
+    <title>Signup_form</title>
+  
+</head>
+
+<body>
+    <div class="background" id="sumit">
+    <form method="post" action="https://yournoteserver.herokuapp.com/users">
+        <h1 class="main">Signup Form</h1>
+        <hr>
+
+        <p>Username:<input  type="text" name="username" id="username" required> </p>
+        <p>Password<input type="password" name="password" id="password"required></p>
+        <p>Firstname:<input type="text" name="FirstName" id="FirstName" required> </p>
+        <p>lastname:<input type="text" name="LastName" required id="LastName"> </p>
+        <hr>
+        <button id="submit">Sign up</button>
+    </form>
+</div>
+
+<script>
+    document.querySelector('#submit').addEventListener('click', ()=>{
+
+        fetch("https://yournoteserver.herokuapp.com/users", {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/x-www-form-urlencoded',
+            'Access-Control-Request-Method': 'POST',
+            'Access-Control-Request-Headers': 'origin',
+            'Origin': 'https://yournoteserver.herokuapp.com/',
+        },
+        body: {
+            username: document.getElementById('username').value,
+            password: document.getElementById('password').value,
+            firstName: document.getElementById('FirstName').value,
+            lastName: document.getElementById('LastName').value,
+
+        },
+        })
+        .then((response)=>{
+			if(response.status!=200||response.status!=304){
+				cosole.log(response.json())
+			}
+			return response.json();
+		}).then((user)=>console.log(user))
+	}
+
+</script>
+</body>
+
+</html>
