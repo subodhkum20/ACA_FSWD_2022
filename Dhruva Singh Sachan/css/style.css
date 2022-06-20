@@ -1,0 +1,217 @@
+@import 'utilities.css';
+:root{
+    --primary:#d02a21;
+    --primary2:rgb(89, 160, 219);
+    --pure:#161616;
+    --dark:#FFFFFF;
+    --ternary:#f8e6e6;
+    --light:#F2F2F2; 
+}
+header nav.values a{
+    color: #FFFFFF; 
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    -webkit-font-smotthing:antialiased
+}
+body{
+   font-family:'Poppins',sans-serif; 
+}
+header{
+    background: 0var(--dark);
+   
+
+    
+}
+.container{
+    max-width :1152px;
+    padding:0 15px;
+    margin: 0 auto;
+}
+header nav img.logo{
+    max-width: 125px;
+  /*  max-height: 50px;*/
+}
+header img.man{
+    max-width: 1500 px;
+    max-height: 650px;
+  
+  
+}
+header nav .left a{
+    color:var(--pure);
+    text-decoration:none ;
+    margin-right: 2rem;
+    text-transform: uppercase;
+    transition: all .3s ease;
+}
+header nav .left a:hover{
+    color: var(--primary);
+    font-size: larger;
+}
+header nav{
+    padding :0.1rem 0rem 0rem 1rem;
+    background: #898989;
+}
+header nav .branding{
+    margin-right:3rem;
+}
+.face .right{
+    color: var(--pure);
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.face .right h6{
+   font-size: 1.6rem;
+   color: var( --primary2);
+   margin-bottom: 0.2rem;
+   margin-top: 2rem;
+}
+.face .right h1{
+    font-size:3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom:2rem;
+}
+.face .right h1 span{
+    color:var(--primary);
+}
+.face .right p{
+    line-height: 1.9;
+    margin-bottom: 2rem;
+}
+section {
+    margin-top: 3rem;
+padding: 1rem 0;
+background: #05416c;
+}
+ .about{
+    margin-top: 7rem;
+    padding: 3rem 0;
+    background: #05416c;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    margin-bottom: 7.2rem;
+}
+.services{
+    margin-top: 3rem;
+    
+    padding: 1rem 0;
+    background: #a1e2f272;
+}
+section .aboutmeimg{
+    max-height: 400px;
+    border-radius: 50%;
+    
+   
+
+}
+section .contacts{
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+section .social{
+   
+   border-radius: 20%;
+    margin-top: 10px;
+    margin-right: 0.8rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    transition: all .2s ease-in-out;
+
+   
+}
+section .social:hover{
+    border-radius: 50%;
+
+} 
+
+section.about h1{
+    color: #F2F2F2;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+section.about h1 span{
+    color: var(--primary2);
+}
+section.about h3{
+    color: #ffffffe3;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 4000;
+} 
+section.about p{
+    color: #d1e0ea;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+.sectionheading{
+    color: #094c78;
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 0.5;
+}
+.sectionheading span{
+    color:#9d1ab7;
+}
+
+.sectionheading + p{
+    color: #1f066ae3;
+    font-family: 'Lato',sans-serif;
+    margin-bottom: 1rem;
+    text-align: center;
+
+}
+section.services .card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 6rem;
+    margin-top: 5rem;
+
+}
+section.services .card-wrapper .card{
+    background: #ffffff;
+    border-radius: 5%;
+    padding: 3rem 2rem ;
+    position: relative;
+    padding-top: 6.5rem;
+    text-align: center;
+    transition: all .3s ease-out;
+}
+section.services .card-wrapper .card img{
+    position: absolute;
+    top:-3.5rem;
+    left:50%;
+    height: 150px;
+    transform: translateX(-50%);
+    border-radius: 5%;
+    
+
+}
+section.services .card-wrapper .card h2{
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+section.services .card-wrapper .card p{
+    font-family: 'Lato',sans-serif;
+    color: #386786;
+    line-height: 1.6;
+}
+section.services .card-wrapper .card:hover{
+    border-width: 2px;
+    border-color: #386786;
+    background: #22a8b1;
+}
