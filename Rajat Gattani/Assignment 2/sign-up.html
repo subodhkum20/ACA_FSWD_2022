@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign-Up</title>
+</head>
+<body>
+    <h1>Sign-Up</h1>
+    <p class="prompt"></p>
+    <form>
+        <table>
+            <tr>
+                <td><lable>User-name : </lable></td>
+                <td><input type="text" id="username" class="username"></td>
+            </tr>
+            <tr>
+                <td><lable>Password: </lable></td>
+                <td><input type="password" id="password" class="password"></td>
+            </tr>
+            <tr>
+                <td><lable>First Name: </lable></td>
+                <td><input type="text" id="FirstName" class="FirstName" ></td>
+            </tr>
+            <tr>
+                <td><lable>Last Name: </lable></td>
+                <td><input type="text"  id="LastName" class="LastName" ></td>
+            </tr>
+        </table>
+        <button id="submit" onclick="signUp()">Sign Up</button>
+    </form>
+</body>
+<script>
+    var reqBody = {
+    username: document.querySelector('.username').value,
+    password: document.querySelector('.password').value,
+    firstName: document.querySelector('.FirstName').value,
+    lastName: document.querySelector('.LastName').value,
+   }
+function signUp(){
+    fetch('https://yournoteserver.herokuapp.com/users',{
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/x-www-form-ur;lencoded',
+            'Access-Control-Request-Method': 'POST',
+            'Access-Control-Request-Headers': 'origin',
+            'Origin': 'https://yournoteserver.herokuapp.com/',
+        },
+        body: new URLSearchParams(reqBody)
+    }
+    ).then(response =>{
+        return response.json();
+    })
+    .then(response=>{
+        if(response.statusCode!=401&&response.statusCode!=500){
+            document.querySelector('.prompt').innerHTML="Successfully registered";
+        }
+        else{
+            alert(response.err);
+        }
+    });
+} 
+</script>
+</html>
