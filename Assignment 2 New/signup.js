@@ -14,6 +14,15 @@
 				"Access-Control-Request-Headers":"origin",
 				"Origin":"https://yournoteserver.herokuapp.com/"
 			}
+			res.statusCode=401;
+         res.setHeader('Content-Type', 'application/json');
+         res.send({err:'try a different username'});
+         res.statusCode=500;
+         res.setHeader('Content-Type', 'application/json');
+         res.send({err:"username and password required"})
+         res.statusCode=200;
+         res.setHeader('Content-Type', 'application/json');
+         res.send(user);
 		}).then((response)=>{
 			if(response.status!=200||response.status!=304){
 				cosole.log(response.json())
