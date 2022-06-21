@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <head>
     <title>Signup</title>
-    
-       
-    
 </head>
 <body>
     <div id="main">
@@ -18,27 +15,27 @@
             <label for="ps">Password: </label>
             <input type="password" id="ps"><p></p>
         </form>
-        <button id="submit">Submit</button>
-        
+        <button id="submit" onclick="function()">Submit</button>
     </div>
     <script>
-        document.querySelector('#submit').addEventListener('click', ()=>{
+            var reqBody = {
+        username: document.getElementById('username').value,
+        password: document.getElementById('password').value,
+        firstName: document.getElementById('FirstName').value,
+        lastName: document.getElementById('LastName').value
+        }
 
+        function funtion(){
             fetch("https://yournoteserver.herokuapp.com/users", {
             method: 'POST',
+            body: new URLSearchParams(reqBody),
             headers: {
                 'Content-type': 'application/x-www-form-urlencoded',
                 'Access-Control-Request-Method': 'POST',
                 'Access-Control-Request-Headers': 'origin',
                 'Origin': 'https://yournoteserver.herokuapp.com/',
             },
-            body: {
-                username: document.getElementById('uname').value,
-                password: document.getElementById('ps').value,
-                firstName: document.getElementById('fname').value,
-                lastName: document.getElementById('lname').value
-
-            },
+            
             })
             .then((res)=>{
                 console.log(res)
@@ -57,8 +54,7 @@
 
                 }
             })
-            
-            });
+        }
     
     </script>
 </body>
