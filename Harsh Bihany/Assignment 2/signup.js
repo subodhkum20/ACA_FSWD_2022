@@ -24,14 +24,17 @@ function callSignUp () {
             if (response.err == "try a different username"){
                 //document.querySelector('.response').textContent = response.err;
                 alert(response.err);
+                document.querySelector('.response').textContent = '';
             }
             else if (response.err == "try different password"){
                 //document.querySelector('.response').textContent = response.err;
                 alert(response.err);
+                document.querySelector('.response').textContent = '';
             }
             else if (response.err == "username and password required"){
                 //document.querySelector('.response').textContent = response.err;
                 alert(response.err);
+                document.querySelector('.response').textContent = '';
             } 
             else {
                 document.querySelector('.response').textContent = "Congratulations! You have signed up successfully!!";
