@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <p class="prompt"></p>
+    <form>
+        <table>
+            <tr>
+                <td><lable>User-name : </lable></td>
+                <td><input type="text" name="User-name : " class="username"></td>
+            </tr>
+            <tr>
+                <td><lable>Password: </lable></td>
+                <td><input type="password" name="Password: " class="password"></td>
+            </tr>
+        </table>
+        <button class="submit" onclick="login()">Login</button>
+    </form>
+</body>
+<script>
+    
+var reqBody = {
+    username: document.querySelector('.username').value,
+    password: document.querySelector('.password').value,
+}
+function login(){
+    fetch('https://yournoteserver.herokuapp.com/users/login',{
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/x-www-form-urlencoded',
+            'Access-Control-Request-Method': 'POST',
+            'Access-Control-Request-Headers': 'origin',
+            'Origin': 'https://yournoteserver.herokuapp.com/',
+        },
+        body: new URLSearchParams(reqBody)
+    })
+    .then(response=>{
+        return response.json();
+    })
+    .then(response=>{
+        if(response.statusCode!=401){
+            document.querySelector('.prompt').innerHTML="Successfully logged in!";
+        }
+        else{
+            alert(response.err);
+        }
+    });
+}
+</script>
+</html>
