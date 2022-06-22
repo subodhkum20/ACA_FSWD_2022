@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>login</title>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form class="login">
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" id="username" class="login__input" placeholder="User name">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" id="password" class="login__input" placeholder="Password">
+				</div>
+				
+
+
+				<p id="credential"></p>
+
+
+				<button class="button login__submit" onclick="login()">
+					<span class="button__text">Login Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>				
+			</form>
+			<div class="social-login">
+				<h3>log in via</h3>
+				<div class="social-icons">
+					<a href="#" class="social-login__icon fab fa-instagram"></a>
+					<a href="#" class="social-login__icon fab fa-facebook"></a>
+					<a href="#" class="social-login__icon fab fa-twitter"></a>
+				</div>
+			</div>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
+<!-- partial -->
+  
+
+<script>
+
+	function login(){
+		var requestBody = {
+ username: document.getElementById('username').value,
+password: document.getElementById('password').value,
+ }
+
+		console.log(reqbody);
+		fetch("https://yournoteserver.herokuapp.com/users", {
+			method:"POST",
+			body: new URLSearchParams(reqBody),
+			headers:{
+                'Content-type': 'application/x-www-form-urlencoded',
+				'Access-Control-Request-Method': 'Post',
+				'Access-Control-Request-Headers': 'origin',
+				'Origin': 'https://yournoteserver.herokuapp.com/',
+			},
+        }).then((response) => {
+			console.log(response)
+                if(response.status===401){
+                    response.setHeader('Content-Type', 'application/json');
+                    response.send({err:"user not found"})
+
+                }
+                else if (response.status===401){
+                    response.setHeader('Content-Type', 'application/json');
+                    response.send({err:"incorrect password"});
+
+                }else if(response.status===200){
+					var token=authenticate.getToken({_id:user._id})
+
+                    response.setHeader('Content-Type', 'application/json');
+					res.send({success:true,token:token})
+
+
+                }
+		}).catch((err) => {
+	console.log(err)
+})
+
+
+
+	}
+</script>
+</body>
+</html>
