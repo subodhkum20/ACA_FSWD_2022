@@ -21,8 +21,8 @@
 		})
 	}
        function validate {
-    var  username=document.getElementById('username').value;
-    var  password=document.getElementById('password').value;
+    var  username=document.getElementById('username').value,
+    var  password=document.getElementById('password').value
     fetch("https://yournoteserver.herokuapp.com/users/login",{
 			method:"POST",
 			body:new URLSearchParams(reqBody),
