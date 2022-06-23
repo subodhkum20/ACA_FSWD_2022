@@ -14,9 +14,7 @@ body{
     justify-content: center;
     background-color: var(--color-primary);
     font-size: 18px;
-    
-
-}
+    }
 
 
 .createbox{
@@ -25,6 +23,7 @@ body{
     position: relative;
     margin: 1rem;
     padding: 2rem;
+    top:70px;
     
 }
 

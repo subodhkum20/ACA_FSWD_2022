@@ -6,7 +6,7 @@
         hr{  
             background-color:white;
             border-style: dotted none none;
-            border-color:cyan;
+            border-color:red;
             border-width: 8px;
             width: 10%;
         }
@@ -22,7 +22,7 @@
             font-family: Garamond;
         }
         .top-container{
-            background-color: aquamarine;
+            background-color: #00FFFF;
             font-family:'Trebuchet MS', sans-serif;
             border-radius: 15px;
         }
