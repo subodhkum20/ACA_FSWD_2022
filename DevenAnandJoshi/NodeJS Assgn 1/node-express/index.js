@@ -8,6 +8,10 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 const dishRouter = require('./routes/dishRouter');
 
+
+const dishRouter = require('./routes/dishRouter');
+
+app.use('/dishes/:dishId', dishIdRouter);
 app.use('/dishes', dishRouter);
 /*
 app.get('/dishes/:dishId', (req,res,next) => {
