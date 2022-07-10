@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 const dishRouter = require('./routes/dishRouter');
 
 app.use('/dishes', dishRouter);
-
+/*
 app.get('/dishes/:dishId', (req,res,next) => {
     res.end('Will send details of the dish: ' + req.params.dishId +' to you!');
 });
@@ -28,7 +28,7 @@ app.put('/dishes/:dishId', (req, res, next) => {
 app.delete('/dishes/:dishId', (req, res, next) => {
     res.end('Deleting dish: ' + req.params.dishId);
 });
-
+*/
 app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 app.use((req, res, next) => {
