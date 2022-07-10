@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>SignUp Page </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<div class="buttn">		
+            <br>		
+            <br>		
+            <br>		
+            <br>
+            <br>						
+			<a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Login with Facebook</a>
+			<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Login with  Twitter  </a>
+		</div>
+		</div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>SIGNUP</h5>
+		<p>Already have an account? <a href="index1.html">Login </a></p>
+		<div class="inputs">
+		    <input type="email" placeholder="Enter your email address">
+			<input id="username" type="text" placeholder="Username">
+			<br>
+			<input id= "password" type ="password" placeholder="Enter your password">
+			<input type="password" placeholder="Confirm your password">
+		</div>
+			
+			<br><br>
+			
+		<div class="remember-me--forget-password">
+				<!-- Angular -->
+	<label>
+		<input type="checkbox" name="item" checked/>
+		<span class="text-checkbox">Remember me</span>
+	</label>
+			
+		</div>
+			
+			<br>
+			<button onclick="run()">SignUp</button>
+	</div>
+	
+</div>
+<!-- partial -->
+
+
+  
+</body>
+<script>
+	function run(){
+		var reqBody={
+			"username":document.getElementById("username"),
+			"password":document.getElementById("password")
+		}
+		console.log("abcd")
+		fetch("https://yournoteserver.herokuapp.com/users",{
+			method:"POST",
+			body:new URLSearchParams(reqBody),
+			headers:{
+				"Content-type":"application/x-www-form-urlencoded",
+				'Access-Control-Request-Method':"POST",
+				"Access-Control-Request-Headers":"origin",
+				"Origin":"https://yournoteserver.herokuapp.com/"
+			}
+		}).then((response)=>{
+			if(response.status!=200||response.status!=304){
+				cosole.log(response.json())
+			}
+			return response.json();
+		}).then((user)=>console.log(user))
+	}
+</script>
+</html>
