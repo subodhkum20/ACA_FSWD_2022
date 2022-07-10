@@ -15,18 +15,18 @@
             <label for="ps">Password: </label>
             <input type="password" id="ps"><p></p>
         </form>
-        <button id="submit" onclick="function()">Submit</button>
+        <button id="submit" onclick="funtion()">Submit</button>
     </div>
+    <p id="result"></p>
     <script>
-            var reqBody = {
-        username: document.getElementById('username').value,
-        password: document.getElementById('password').value,
-        firstName: document.getElementById('FirstName').value,
-        lastName: document.getElementById('LastName').value
+        var reqBody = {
+            username: document.getElementById('uname').value,
+            password: document.getElementById('ps').value,
+            firstName: document.getElementById('fname').value,
+            lastName: document.getElementById('lname').value
         }
-
         function funtion(){
-            fetch("https://yournoteserver.herokuapp.com/users", {
+            const res=fetch("https://yournoteserver.herokuapp.com/users", {
             method: 'POST',
             body: new URLSearchParams(reqBody),
             headers: {
@@ -34,28 +34,25 @@
                 'Access-Control-Request-Method': 'POST',
                 'Access-Control-Request-Headers': 'origin',
                 'Origin': 'https://yournoteserver.herokuapp.com/',
-            },
-            
+            }
             })
             .then((res)=>{
-                console.log(res)
-                if(res.status===401){
-                    res.setHeader('Content-Type', 'application/json');
-                    res.send({err:'try a different username'});
-
+                console.log(res.status)
+                if(res.status==200){
+                    document.getElementById("result").innerHTML="Succesful";
                 }
-                else if (res.status===500){
-                    res.setHeader('Content-Type', 'application/json');
-                    res.send({err:"username and password required"});
-
-                }else if(res.status===200){
-                    res.setHeader('Content-Type', 'application/json');
-                    res.send(user);
-
+                if(res.status==401){
+                    res.json().then((res)=>{
+                        document.getElementById("result").innerHTML=res.err;
+                    })
+                }
+                if(res.status==500){
+                    res.json().then((res)=>{
+                        document.getElementById("result").innerHTML=res.err;
+                    })
                 }
             })
         }
-    
     </script>
 </body>
 </html>
