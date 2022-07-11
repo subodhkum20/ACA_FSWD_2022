@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <head>
     <title>Signup</title>
-    
-       
-    
 </head>
 <body>
     <div id="main">
@@ -18,48 +15,44 @@
             <label for="ps">Password: </label>
             <input type="password" id="ps"><p></p>
         </form>
-        <button id="submit">Submit</button>
-        
+        <button id="submit" onclick="funtion()">Submit</button>
     </div>
+    <p id="result"></p>
     <script>
-        document.querySelector('#submit').addEventListener('click', ()=>{
-
-            fetch("https://yournoteserver.herokuapp.com/users", {
+        var reqBody = {
+            username: document.getElementById('uname').value,
+            password: document.getElementById('ps').value,
+            firstName: document.getElementById('fname').value,
+            lastName: document.getElementById('lname').value
+        }
+        function funtion(){
+            const res=fetch("https://yournoteserver.herokuapp.com/users", {
             method: 'POST',
+            body: new URLSearchParams(reqBody),
             headers: {
                 'Content-type': 'application/x-www-form-urlencoded',
                 'Access-Control-Request-Method': 'POST',
                 'Access-Control-Request-Headers': 'origin',
                 'Origin': 'https://yournoteserver.herokuapp.com/',
-            },
-            body: {
-                username: document.getElementById('uname').value,
-                password: document.getElementById('ps').value,
-                firstName: document.getElementById('fname').value,
-                lastName: document.getElementById('lname').value
-
-            },
+            }
             })
             .then((res)=>{
-                console.log(res)
-                if(res.status===401){
-                    res.setHeader('Content-Type', 'application/json');
-                    res.send({err:'try a different username'});
-
+                console.log(res.status)
+                if(res.status==200){
+                    document.getElementById("result").innerHTML="Succesful";
                 }
-                else if (res.status===500){
-                    res.setHeader('Content-Type', 'application/json');
-                    res.send({err:"username and password required"});
-
-                }else if(res.status===200){
-                    res.setHeader('Content-Type', 'application/json');
-                    res.send(user);
-
+                if(res.status==401){
+                    res.json().then((res)=>{
+                        document.getElementById("result").innerHTML=res.err;
+                    })
+                }
+                if(res.status==500){
+                    res.json().then((res)=>{
+                        document.getElementById("result").innerHTML=res.err;
+                    })
                 }
             })
-            
-            });
-    
+        }
     </script>
 </body>
 </html>
